@@ -41,8 +41,14 @@ function simpleCardsFusion (str) {
   }
 
   for (var i = 0; i < fusionCards.length; i++) {
-    if ((inputCard.card1 === fusionCards[i].card1 || inputCard.card1 === fusionCards[i].card2) &&
-        (inputCard.card2 === fusionCards[i].card1 || inputCard.card2 === fusionCards[i].card2)) {
+    // if ((inputCard.card1 === fusionCards[i].card1 || inputCard.card1 === fusionCards[i].card2) &&
+    //     (inputCard.card2 === fusionCards[i].card1 || inputCard.card2 === fusionCards[i].card2)) {
+    //   return fusionCards[i].name;
+    // }
+    if (inputCard.card1 === fusionCards[i].card1 && inputCard.card2 === fusionCards[i].card2) {
+      return fusionCards[i].name;
+    }
+    else if (inputCard.card1 === fusionCards[i].card2 && inputCard.card2 === fusionCards[i].card1) {
       return fusionCards[i].name;
     }
   }
@@ -67,5 +73,9 @@ console.log(simpleCardsFusion('Cyber Dragon+Cyber Dragon'));
 console.log(simpleCardsFusion('Dark Magician+Dark Magician'));
 // Fusion failed
 
+
 console.log(simpleCardsFusion('Cyber Dragon+Dark Magician'));
+// Fusion failed
+
+console.log(simpleCardsFusion('Curse of Dragon+Curse of Dragon'));
 // Fusion failed
